@@ -73,10 +73,6 @@ usage() {
 }
 
 ##MAIN
-check_dns_resolver
-exit
-
-
 [ $# -gt 0 ] || usage
 COMMAND=$1
 shift 1
