@@ -48,8 +48,8 @@ check_dns_resolver(){
 	if [ ! -f /etc/resolver/dev ]; then
 		echo "Creating DNS resolver for .dev domain"
 	  	sudo touch /etc/resolver/dev
-	  	sudo echo -e "nameserver 127.0.0.1\nport 5300 \n" >> /etc/resolver/dev
-	fi
+        sudo bash -c "echo -e \"nameserver 127.0.0.1\nport 5300\" >> /etc/resolver/dev"
+      fi
 }
 
 start_docker_containers(){
@@ -73,6 +73,9 @@ usage() {
 }
 
 ##MAIN
+check_dns_resolver
+exit
+
 
 [ $# -gt 0 ] || usage
 COMMAND=$1
