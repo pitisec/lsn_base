@@ -4,14 +4,19 @@ set -eu
 
 ARGS="$@"
 
-DB_DIR="_db"
 MIN_DOCKER_VERSION=1.6.0
 
 # check database dir
 check_db_dir() {
-	if [ ! -d ~/.lsn_base/"$DB_DIR" ]; then
-	  mkdir ~/.lsn_base/"$DB_DIR"
+	if [ ! -d ~/.lsn_base/_db93 ]; then
+	  mkdir ~/.lsn_base/_db93
 	fi
+    if [ ! -d ~/.lsn_base/_db94 ]; then
+      mkdir ~/.lsn_base/_db94
+    fi
+    if [ ! -d ~/.lsn_base/_db95 ]; then
+      mkdir ~/.lsn_base/_db95
+    fi
 }
 
 #check docker version

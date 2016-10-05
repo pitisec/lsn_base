@@ -1,14 +1,32 @@
 version: '2'
 services:
-  db:
-    container_name: db
-    image: pitisec/postgresql-9.4-plv8
+  db93:
+    container_name: db93
+    image: pitisec/postgresql-9.3-plv8
     volumes:
-      - ./_db:/var/lib/postgresql/data
+      - ./_db93:/var/lib/postgresql/data
     networks:
       - back
     ports:
-      - "5432:5432"
+      - "5433:5432"
+  db94:
+    container_name: db94
+    image: pitisec/postgresql-9.4-plv8
+    volumes:
+      - ./_db94:/var/lib/postgresql/data
+    networks:
+      - back
+    ports:
+      - "5434:5432"
+  db95:
+    container_name: db95
+    image: pitisec/postgresql-9.5-plv8
+    volumes:
+      - ./_db95:/var/lib/postgresql/data
+    networks:
+      - back
+    ports:
+      - "5435:5432"
   proxy:
     image: jwilder/nginx-proxy
     container_name: proxy
