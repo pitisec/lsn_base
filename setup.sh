@@ -87,16 +87,16 @@ check_docker_version
 
 case "$COMMAND" in
     help)
-		usage
+	usage
         ;;
 
     start)
-		check_dns_resolver
-		start_docker_containers
+#	check_dns_resolver
+	start_docker_containers
         ;;
 
     stop)
-		stop_docker_containers
+	stop_docker_containers
         ;;
 
     *)
