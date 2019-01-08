@@ -50,10 +50,10 @@ check_dns_resolver(){
 		echo "Creating DNS resolver dir"
 	  	sudo mkdir /etc/resolver
 	fi
-	if [ ! -f /etc/resolver/dev ]; then
-		echo "Creating DNS resolver for .dev domain"
-	  	sudo touch /etc/resolver/dev
-        sudo bash -c "echo -e \"nameserver 127.0.0.1\nport 5300\" >> /etc/resolver/dev"
+	if [ ! -f /etc/resolver/test ]; then
+		echo "Creating DNS resolver for .test domain"
+	  	sudo touch /etc/resolver/test
+        sudo bash -c "echo -e \"nameserver 127.0.0.1\nport 5300\" >> /etc/resolver/test"
       fi
 }
 
@@ -91,7 +91,7 @@ case "$COMMAND" in
         ;;
 
     start)
-#	check_dns_resolver
+	check_dns_resolver
 	start_docker_containers
         ;;
 

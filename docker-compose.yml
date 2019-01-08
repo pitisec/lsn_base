@@ -36,6 +36,13 @@ services:
       - /var/run/docker.sock:/tmp/docker.sock
     networks:
       - front
+  devdns:
+    image: robmadole/devdns:latest
+    container_name: devdns
+    ports:
+      - "5300:5300"
+    networks:
+      - front
 networks:
   front:
     driver: bridge
